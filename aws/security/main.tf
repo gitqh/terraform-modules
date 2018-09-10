@@ -1,3 +1,7 @@
+terraform {
+  # The configuration for this backend will be filled in by Terragrunt
+  backend "s3" {}
+}
 resource "aws_security_group" "quhang-sg" {
   name = "quhang-sg"
   ingress {
