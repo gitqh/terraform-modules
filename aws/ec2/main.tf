@@ -1,3 +1,12 @@
+provider "aws" {
+  region = "${var.aws_region}"
+}
+
+terraform {
+  # The configuration for this backend will be filled in by Terragrunt
+  backend "s3" {}
+}
+
 resource "aws_instance" "server" {
   ami           = "${var.ami_id}"
   instance_type = "${var.aws_instance_type}"
